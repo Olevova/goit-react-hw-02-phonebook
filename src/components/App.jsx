@@ -1,10 +1,12 @@
 import React from "react";
-import { Contact } from "contact/contact";
+import { ContactForm } from "components/contactForm/contactForm";
+import { nanoid } from 'nanoid'
+import { Contact } from "./Contact/Contact";
 
 export class App extends React.Component {
   
 state = {
-  contacts: [{name:"tolik", number:155}],
+  contacts: [],
   name: '',
   number: ''
 }
@@ -14,9 +16,17 @@ state = {
   }
 
   handleAdd = (e) => {
+    e.preventDefault();
+    if (this.state.contacts.find((elem) => elem.name === this.state.name))
+    {
+      alert("vge e")
+      return
+      }
+    
     console.log(e);
-    this.setState(({contacts}) => ({
-      contacts: [...contacts, {name: this.state.name, number: this.state.number } ]
+    this.setState(({ contacts }) => (
+      {
+      contacts: [...contacts, {id:nanoid(5),name: this.state.name, number: this.state.number } ]
     }
     ))
 
@@ -34,11 +44,12 @@ state = {
           color: '#010101'
         }}
       >
-        <Contact
+        <ContactForm
           name={this.state.name}
           number={this.state.number}
-          func={this.handleName}
-          func2={this.handleAdd } />
+          onAddInForm={this.handleName}
+          onSubmitForm={this.handleAdd} />
+        <Contact props={this.state.contacts}/>
       </div>
     );
   }
