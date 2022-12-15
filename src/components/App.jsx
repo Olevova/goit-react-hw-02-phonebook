@@ -7,29 +7,27 @@ export class App extends React.Component {
   
 state = {
   contacts: [],
-  name: '',
-  number: ''
+ 
 }
-  handleName = ev =>
-  {
-    this.setState({ [ev.currentTarget.name]: ev.currentTarget.value});
-  }
 
-  handleAdd = (e) => {
-    e.preventDefault();
-    if (this.state.contacts.find((elem) => elem.name === this.state.name))
+  datamy = data => {
+    console.log(data);
+  }
+  
+  handleAdd = (formdate) => {
+    const { name, number } = formdate;
+    // e.preventDefault();
+    if (this.state.contacts.find((elem) => elem.name === name))
     {
       alert("vge e")
       return
       }
     
-    console.log(e);
     this.setState(({ contacts }) => (
       {
-      contacts: [...contacts, {id:nanoid(5),name: this.state.name, number: this.state.number } ]
+      contacts: [...contacts, {id:nanoid(5),name,number } ]
     }
     ))
-
   }
 
   render() {
@@ -44,11 +42,7 @@ state = {
           color: '#010101'
         }}
       >
-        <ContactForm
-          name={this.state.name}
-          number={this.state.number}
-          onAddInForm={this.handleName}
-          onSubmitForm={this.handleAdd} />
+        <ContactForm onSubmit={this.handleAdd} />
         <Contact props={this.state.contacts}/>
       </div>
     );
