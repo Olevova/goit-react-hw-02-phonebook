@@ -1,5 +1,9 @@
 import React from "react";
-
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import style from "./contactForm.module.scss"
 
 export class ContactForm extends React.Component{ 
   state = {
@@ -29,8 +33,22 @@ export class ContactForm extends React.Component{
   }
 
   render() {
-    return( <form onSubmit={this.handleSubmit}>
-      <label>
+    return (
+       <Box
+      sx={{
+        display: 'flex',
+        flexDirection: "column",
+        flexWrap: 'wrap',
+        '& > :not(style)': {
+          m: 1,
+          width: "100%",
+          height: "100%",
+        },
+      }}
+    >
+      <Paper elevation={3}>
+      <form onSubmit={this.handleSubmit}>
+      <label className={style.labelEl}>
         Name
         <input
           type="text"
@@ -42,7 +60,7 @@ export class ContactForm extends React.Component{
           required
         />
       </label>
-      <label>
+      <label className = {style.labelEl}>
         Number
         <input
           type="tel"
@@ -54,8 +72,15 @@ export class ContactForm extends React.Component{
           required
         />
       </label>
-      <button type="submit"> Add Contact</button>
-    </form>)
+      <Stack spacing={2} direction="row">
+        <Button variant="outlined" style={{ color: "#f0ffff", borderColor: "#f0ffff", backgroundColor:"rgb(136, 169, 157)", justifyContent:"center" , marginBottom:"20px"}} type="submit">
+          Add Contact 
+        </Button>
+        </Stack>
+        </form>
+        </Paper>
+        </Box>)
+        
   }
 
 }
