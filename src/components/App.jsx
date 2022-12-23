@@ -1,8 +1,8 @@
 import React from "react";
+import { nanoid } from 'nanoid';
 import { ContactForm } from "./ContactForm/ContactForm";
-import { nanoid } from 'nanoid'
 import { Contacts } from "./Contacts/Contacts";
-import { Filter } from "./Filter/Filter"
+import { Filter } from "./Filter/Filter";
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
