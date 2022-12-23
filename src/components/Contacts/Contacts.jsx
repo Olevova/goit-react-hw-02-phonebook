@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { ContactElem } from "components/ContactElem/ContactElem";
 
 
-export const Contact = ({ props, delCont }) => {
+export const Contacts = ({ props, delCont }) => {
         return props.map(({id, name, number}) =>
             <ContactElem key={id}
                 id={id}
@@ -12,7 +12,7 @@ export const Contact = ({ props, delCont }) => {
             />
             )}
             
-Contact.propTypes = {
+Contacts.propTypes = {
     props: PropTypes.array.isRequired,
     delCont:PropTypes.func.isRequired
 }

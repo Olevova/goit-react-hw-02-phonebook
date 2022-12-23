@@ -1,7 +1,7 @@
 import React from "react";
 import { ContactForm } from "components/ContactForm/ContactForm";
 import { nanoid } from 'nanoid'
-import { Contact } from "./Contacts/Contacts";
+import { Contacts } from "./Contacts/Contacts";
 import { Filter } from "./Filter/Filter"
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
@@ -80,7 +80,7 @@ state = {
         <Box sx={{ width: '100%' }}>
           <Stack spacing={2}>
             <Item>
-              <Contact props={filterContacts} delCont={this.deleteContact} />
+              <Contacts props={filterContacts} delCont={this.deleteContact} />
             </Item>
           </Stack>
           </Box>
