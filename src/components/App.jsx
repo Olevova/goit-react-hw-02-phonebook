@@ -1,6 +1,6 @@
 import React from "react";
 import { nanoid } from 'nanoid';
-import { ContactForm } from "./ContactForm/ContactForm";
+import { ContactForm } from "./ContacForm/ContacForm";
 import { Contacts } from "./Contacts/Contacts";
 import { Filter } from "./Filter/Filter";
 import Box from '@mui/material/Box';
