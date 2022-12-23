@@ -1,5 +1,5 @@
 import React from "react";
-import { ContactForm } from "components/ContactForm/ContactForm";
+import { ContactForm } from "./ContactForm/ContactForm";
 import { nanoid } from 'nanoid'
 import { Contacts } from "./Contacts/Contacts";
 import { Filter } from "./Filter/Filter"
