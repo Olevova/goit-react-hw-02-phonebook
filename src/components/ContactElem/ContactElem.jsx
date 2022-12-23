@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import style from "./ContactElem.module.scss"
+import style from "./ContactElem.module.scss";
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 

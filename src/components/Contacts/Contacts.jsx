@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { ContactElem } from "components/ContactElem/ContactElem";
+import { ContactElem } from '../ContactElem/ContactElem';
 
 
 export const Contacts = ({ props, delCont }) => {
@@ -16,5 +16,3 @@ Contacts.propTypes = {
     props: PropTypes.array.isRequired,
     delCont:PropTypes.func.isRequired
 }
-
-

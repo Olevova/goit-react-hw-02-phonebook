@@ -3,7 +3,7 @@ import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
-import style from '../ContactForm/ContactForm.module.scss'
+import style from './ContactForm.module.scss'
 
 export class ContactForm extends React.Component{ 
   state = {
@@ -13,7 +13,7 @@ export class ContactForm extends React.Component{
 
     handleName = ev =>
   {
-    this.setState({ [ev.currentTarget.name]: ev.currentTarget.value});
+    this.setState({[ev.currentTarget.name]: ev.currentTarget.value});
   }
 
   reset = () => {
