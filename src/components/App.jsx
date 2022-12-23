@@ -1,7 +1,7 @@
 import React from "react";
-import { ContactForm } from "components/contactForm/contactForm";
+import { ContactForm } from "components/ContactForm/ContactForm";
 import { nanoid } from 'nanoid'
-import { Contact } from "./Contact/Contact";
+import { Contact } from "./Contacts/Contacts";
 import { Filter } from "./Filter/Filter"
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
@@ -21,7 +21,8 @@ export class App extends React.Component {
   
 state = {
   contacts: [],
-  filter:""
+  filter: "",
+  
 }
 
   onFilter = ev => {
@@ -41,6 +42,8 @@ state = {
     }));
   }
 
+
+
   handleAdd = (formdate) => {
     const { name, number } = formdate;
     // e.preventDefault();
@@ -52,7 +55,7 @@ state = {
     
     this.setState(({ contacts }) => (
       {
-      contacts: [...contacts, {id:nanoid(5),name,number } ]
+        contacts: [...contacts, { id: nanoid(5), name, number }]
     }
     ))
   }
@@ -73,7 +76,7 @@ state = {
         }}
       >
         <ContactForm onSubmit={this.handleAdd} />
-        <Filter filter={this.currentTarget} func={this.onFilter} />
+        <Filter filter={this.currentTarget} func={this.onFilter} len={ this.state.contacts} />
         <Box sx={{ width: '100%' }}>
           <Stack spacing={2}>
             <Item>

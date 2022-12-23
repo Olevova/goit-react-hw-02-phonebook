@@ -3,7 +3,7 @@ import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
-import style from "./contactForm.module.scss"
+import style from "./ContactForm.module.scss"
 
 export class ContactForm extends React.Component{ 
   state = {
@@ -28,7 +28,6 @@ export class ContactForm extends React.Component{
 
     console.log(this.state);
     this.props.onSubmit(this.state);
-
     this.reset();
   }
 

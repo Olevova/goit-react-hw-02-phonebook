@@ -1,13 +1,11 @@
 import PropTypes from "prop-types";
-import style from "./Contact.module.scss"
+import style from "./ContactElem.module.scss"
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 
-
-export const Contact = ({ props, delCont }) => {
-        return props.map(({id, name, number}) =>
-            <ul className={style.ulElem} key={id}>
-                        <li className={style.liElem} >
+export const ContactElem = ({ id, name, number, delCont }) => {
+    return <ul className={style.ulElem}>
+    <li className={style.liElem} >
                             <p>Name : {name}</p>
                     <p>Telephone Number : {number}</p>
                     <Stack spacing={2} direction="row">
@@ -16,10 +14,13 @@ export const Contact = ({ props, delCont }) => {
                     </Button>
                     </Stack>        
                 </li>
-                    </ul>
-            )}
-            
-Contact.propTypes = {
+    </ul>
+
+}
+
+ContactElem.propTypes = {
+    id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
-    number: PropTypes.number.isRequired
+    number:PropTypes.string.isRequired,
+    delCont:PropTypes.func.isRequired
 }
